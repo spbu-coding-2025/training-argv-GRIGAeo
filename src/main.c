@@ -12,7 +12,7 @@ int main(int argc, char* argv[]){
     bool is_upper = false;
 
     if (argc == 1){
-        fprintf(stderr, "No flags found");
+        fprintf(stderr, "No flags found.\n");
         return 1;
     }
 
@@ -23,24 +23,20 @@ int main(int argc, char* argv[]){
         else if (argument_processing(argv[i], "--upper_bound=", &upper_bound)){
             is_upper = true;
         }
-        else{
-            fprintf(stderr, "No flags found");
-            return 1;
-        }
     }
 
     if (!is_lower){
-        fprintf(stderr, "Flag lower bound is missing");
+        fprintf(stderr, "Flag --lower bound is missing.\n");
         return 1;
     }
     
     if (!is_upper){
-        fprintf(stderr, "Flag upper bound is missing");
+        fprintf(stderr, "Flag --upper bound is missing.\n");
         return 1;
     }
 
     if (lower_bound > upper_bound){
-        fprintf(stderr, "The lower bound is greater than the upper bound");
+        fprintf(stderr, "The lower bound is greater than the upper bound.\n");
         return 1;
     }
 
