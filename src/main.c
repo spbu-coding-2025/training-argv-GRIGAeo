@@ -11,6 +11,11 @@ int main(int argc, char* argv[]){
     bool is_lower = false;
     bool is_upper = false;
 
+    if (argc == 1){
+        fprintf(stderr, "No flags found");
+        return 1;
+    }
+
     for (int i = 1; i < argc; i ++){
         if (argument_processing(argv[i], "--lower_bound=", &lower_bound)){
             is_lower = true;
